@@ -13,46 +13,30 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import rahulshettyacademy.pageobjects.CartPage;
 import rahulshettyacademy.pageobjects.OrderPage;
 
-
-
 public class AbstractComponent {
-	
-
 	WebDriver driver;
-
 	public AbstractComponent(WebDriver driver) {
-		
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		
 	}
-	
 	@FindBy(css = "[routerlink*='cart']")
 	WebElement cartHeader;
-	
 	 //Here It is for OrderPage
 //	.btn.btn-custom[routerlink='/dashboard/myorders']
 //	@FindBy(css = "[routerlink*='myorders']")
 //	@FindBy(css = ".btn.btn-custom[routerlink='/dashboard/myorders']")
-
 	@FindBy(css = "[routerlink*='myorders']")
 	WebElement orderHeader;
-
-
 	public void waitForElementToAppear(By findBy) {
-
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
-
 	}
 	//For Error Method
 	public void waitForWebElementToAppear(WebElement findBy) {
-
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(findBy));
 
 	}
-	
 	public CartPage goToCartPage()
 	{
 		cartHeader.click();

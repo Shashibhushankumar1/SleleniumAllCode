@@ -94,19 +94,14 @@ public class BaseTest {
 		File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
 		FileUtils.copyFile(source, file);
 		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
-		
-		
 	}
 	
 	@BeforeMethod(alwaysRun=true)
 	public LandingPage launchApplication() throws IOException
 	{
-		
 		 driver = initializeDriver();
-		  landingPage = new LandingPage(driver);
-		landingPage.goTo();
-		return landingPage;
-	
-		
+	     landingPage = new LandingPage(driver);
+		 landingPage.goTo();
+		 return landingPage;	
 	}
 }

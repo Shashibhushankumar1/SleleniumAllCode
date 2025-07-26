@@ -16,7 +16,6 @@ public class CheckoutPage extends AbstractComponent{
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 //	@FindBy(css = ".action__submit")
@@ -40,9 +39,7 @@ public class CheckoutPage extends AbstractComponent{
 	public ConfirmationPage submitOrder()
 	{
 //		submit.click();
-		return new ConfirmationPage(driver);
-		
-		
+		return new ConfirmationPage(driver);	
 	}
 
 }

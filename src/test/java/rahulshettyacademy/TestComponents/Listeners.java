@@ -30,7 +30,6 @@ public class Listeners extends BaseTest implements ITestListener{
 		extentTest.get().log(Status.PASS, "Test Passed");
 		
 	}
-
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -45,9 +44,6 @@ public class Listeners extends BaseTest implements ITestListener{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		
-		
 		String filePath = null;
 		try {
 			
@@ -57,11 +53,7 @@ public class Listeners extends BaseTest implements ITestListener{
 			e.printStackTrace();
 		}
 		extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
-		
-		
 		//Screenshot, Attach to report
-		
-		
 	}
 
 	@Override
@@ -88,9 +80,4 @@ public class Listeners extends BaseTest implements ITestListener{
 		extent.flush();
 		
 	}
-	
-	
-	
-	
-
 }

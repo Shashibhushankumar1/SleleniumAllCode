@@ -24,18 +24,14 @@ public class CartPage extends AbstractComponent{
 		PageFactory.initElements(driver, this);
 
 	}
-
 	public Boolean VerifyProductDisplay(String productName) {
 		Boolean match = cartProducts.stream().anyMatch(product -> product.getText().equalsIgnoreCase(productName));
 		return match;
-
 	}
 
 	public CheckoutPage goToCheckout() {
 		checkoutEle.click();
 		return new CheckoutPage(driver);
-		
-
 	}
 
 }
